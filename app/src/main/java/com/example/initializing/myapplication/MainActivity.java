@@ -5,27 +5,39 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.example.initializing.myapplication.textutil.TextUtil;
 
 public class MainActivity extends AppCompatActivity {
 
+    private  TextView tve;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.layout);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        tve= (TextView)findViewById(R.id.textview3);
+//        TextUtil util=new TextUtil();
+//
+//        TextView tv=(TextView) findViewById(R.id.textView);
+//        tv.setText(util.getValue());
+        for (int i= 0; i <10 ; i++) {
+            Log.i("addd","value"+i);
+        }
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
     }
 
     @Override
@@ -48,5 +60,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+//    public void clickHandler(View source)
+//    {
+//
+//        TextView tv=(TextView) findViewById(R.id.textView);
+//        tv.setText("Android -"+new java.util.Date());
+//    }
+    public void Button2Click(View source)
+    {
+        tve.setText(""+new java.util.Date());
     }
 }
